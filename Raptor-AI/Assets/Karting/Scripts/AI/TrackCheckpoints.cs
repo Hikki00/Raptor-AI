@@ -38,4 +38,9 @@ public class TrackCheckpoints : MonoBehaviour
             Debug.Log("Wrong");
         }  
     }
+
+    public void ResetCheckpoint(Transform carTransform) {
+        nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)]=0;
+    }   
+
 }
