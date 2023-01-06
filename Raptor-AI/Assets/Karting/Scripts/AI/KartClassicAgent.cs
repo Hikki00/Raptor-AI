@@ -41,7 +41,6 @@ public class KartClassicAgent : Agent
     public override void OnEpisodeBegin()
     {
         //init
-        Debug.Log(spawnCarPos);
         transform.position = spawnCarPos;
         transform.forward = spawnCarFor;
 
@@ -59,7 +58,6 @@ public class KartClassicAgent : Agent
 
         if (carTransform == capsule)
         {
-            Debug.Log("entrato");
             AddReward(quantity);
         }
 

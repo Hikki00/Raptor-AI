@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,27 +41,23 @@ public class TrackCheckpoints : MonoBehaviour
 
         if (checkpointSingleList.IndexOf(checkpointSingle) == nextCheckpointSingleIndex)
         {
-            Debug.Log("Correct");
             nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)] = (nextCheckpointSingleIndex + 1) % checkpointSingleList.Count;
 
 
             GameObject go = GameObject.Find(carTransform.name);
             KartClassicAgent other = (KartClassicAgent)go.GetComponentInParent(typeof(KartClassicAgent));
-            other.aggiungi(carTransform, 1f);
+            other.AddRewardOnCar(carTransform, 1f);
         }
         else
         {
-            Debug.Log("Wrong");
             GameObject go = GameObject.Find(carTransform.name);
             KartClassicAgent other = (KartClassicAgent)go.GetComponent(typeof(KartClassicAgent));
-            other.aggiungi(carTransform, -1f);
+            other.AddRewardOnCar(carTransform, -1f);
         }
     }
 
     public void ResetCheckpoint(Transform carTransform)
     {
-
-        Debug.Log(carTransformList.IndexOf(carTransform));
         nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)] = 0;
     }
 
