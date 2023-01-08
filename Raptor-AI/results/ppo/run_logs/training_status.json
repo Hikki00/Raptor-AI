@@ -2,28 +2,37 @@
     "MoveToGoal": {
         "checkpoints": [
             {
-                "steps": 119057,
-                "file_path": "results\\ppo\\MoveToGoal\\MoveToGoal-119057.onnx",
-                "reward": 1.7307692307692308,
-                "creation_time": 1673033173.206899,
+                "steps": 499940,
+                "file_path": "results\\ppo\\MoveToGoal\\MoveToGoal-499940.onnx",
+                "reward": 3.139130435883999,
+                "creation_time": 1673176469.0561836,
                 "auxillary_file_paths": [
-                    "results\\ppo\\MoveToGoal\\MoveToGoal-119057.pt"
+                    "results\\ppo\\MoveToGoal\\MoveToGoal-499940.pt"
+                ]
+            },
+            {
+                "steps": 500004,
+                "file_path": "results\\ppo\\MoveToGoal\\MoveToGoal-500004.onnx",
+                "reward": 3.139130435883999,
+                "creation_time": 1673176469.1115212,
+                "auxillary_file_paths": [
+                    "results\\ppo\\MoveToGoal\\MoveToGoal-500004.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 119057,
+            "steps": 500004,
             "file_path": "results\\ppo\\MoveToGoal.onnx",
-            "reward": 1.7307692307692308,
-            "creation_time": 1673033173.206899,
+            "reward": 3.139130435883999,
+            "creation_time": 1673176469.1115212,
             "auxillary_file_paths": [
-                "results\\ppo\\MoveToGoal\\MoveToGoal-119057.pt"
+                "results\\ppo\\MoveToGoal\\MoveToGoal-500004.pt"
             ]
         }
     },
     "metadata": {
         "stats_format_version": "0.3.0",
         "mlagents_version": "0.29.0",
-        "torch_version": "1.7.0+cpu"
+        "torch_version": "1.7.0+cu110"
     }
 }

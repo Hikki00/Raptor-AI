@@ -33,6 +33,10 @@ public class KartClassicAgent : Agent
 
     }
 
+    void update(){
+        
+    }
+
     void Awake()
     {
         arcade = GetComponent<ArcadeKart>();
@@ -69,7 +73,7 @@ public class KartClassicAgent : Agent
         if (other.tag == "Wall")
         {
 
-            AddReward(-0.5f);
+            AddReward(-0.1f);
             EndEpisode();
         }
     }
