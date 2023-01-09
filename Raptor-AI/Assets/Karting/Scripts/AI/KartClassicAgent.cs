@@ -72,10 +72,18 @@ public class KartClassicAgent : Agent
     {
         if (other.tag == "Wall")
         {
+            Debug.Log("Ho preso il muro");
 
-            AddReward(-0.1f);
-            EndEpisode();
+            AddReward(-0.3f);
         }
+    }
+
+    private void OnTriggerStay(Collider other){
+        if (other.tag == "Wall"){
+            Debug.Log("Sto nel muro");
+            AddReward(-0.005f);
+        }
+            
     }
 
 

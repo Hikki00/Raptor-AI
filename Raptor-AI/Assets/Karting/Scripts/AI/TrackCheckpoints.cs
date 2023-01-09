@@ -41,7 +41,7 @@ public class TrackCheckpoints : MonoBehaviour
         
         if (checkpointSingleList.IndexOf(checkpointSingle) == nextCheckpointSingleIndex)
         {
-            /* Debug.Log("then"+checkpointSingleList.IndexOf(checkpointSingle)+" "+nextCheckpointSingleIndex); */
+            Debug.Log("then"+checkpointSingleList.IndexOf(checkpointSingle)+" "+nextCheckpointSingleIndex);
             nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)] = (nextCheckpointSingleIndex + 1) % checkpointSingleList.Count;
             
 
@@ -51,9 +51,9 @@ public class TrackCheckpoints : MonoBehaviour
         }
         else
         {
-            /* Debug.Log("else"+checkpointSingleList.IndexOf(checkpointSingle)+" "+nextCheckpointSingleIndex);  */        
+            Debug.Log("else"+checkpointSingleList.IndexOf(checkpointSingle)+" "+nextCheckpointSingleIndex);    
             GameObject go = GameObject.Find(carTransform.name);
-            KartClassicAgent other = (KartClassicAgent)go.GetComponent(typeof(KartClassicAgent));
+            KartClassicAgent other = (KartClassicAgent)go.GetComponentInParent(typeof(KartClassicAgent));
             other.AddRewardOnCar(carTransform, -1f);
         }
     }

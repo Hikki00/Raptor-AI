@@ -1168,7 +1168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SensorName: RayPerceptionSensor
-  m_DetectableTags: []
+  m_DetectableTags:
+  - Wall
+  - Checkpoint
   m_RaysPerDirection: 3
   m_MaxRayDegrees: 70
   m_SphereCastRadius: 0.5
