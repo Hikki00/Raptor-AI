@@ -12,6 +12,9 @@ public class TrackCheckpoints : MonoBehaviour
     private List<Transform> checkpointTransformList;
 
     private KartClassicAgent kartClassicAgent;
+
+    private bool lastCheckpoint = false;
+
     private void Awake()
     {
         Transform checkpointsTransform = transform.Find("AgentCheckpoints");
@@ -26,9 +29,11 @@ public class TrackCheckpoints : MonoBehaviour
             checkpointSingleList.Add(checkpointSingle);
         }
 
+        getLastCheckpoint();
+
         nextCheckpointSingleIndexList = new List<int>();
         foreach (Transform carTransform in carTransformList)
-        {
+        { 
             nextCheckpointSingleIndexList.Add(0);
         }
     }
@@ -36,24 +41,28 @@ public class TrackCheckpoints : MonoBehaviour
     public void CarThroughCheckpoint(CheckpointSingle checkpointSingle, Transform carTransform)
     {
 
-
         int nextCheckpointSingleIndex = nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)];
         
         if (checkpointSingleList.IndexOf(checkpointSingle) == nextCheckpointSingleIndex)
         {
             nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)] = (nextCheckpointSingleIndex + 1) % checkpointSingleList.Count;
             
+            GameObject go = GameObject.Find(carTransform.name);
+            KartClassicAgent other = (KartClassicAgent)go.GetComponentInParent(typeof(KartClassicAgent));
+            if(other!=null){
+                other.AddRewardOnCar(carTransform, 1f);
+            }
+        }
+        else
+        {
 
             GameObject go = GameObject.Find(carTransform.name);
             KartClassicAgent other = (KartClassicAgent)go.GetComponentInParent(typeof(KartClassicAgent));
-            other.AddRewardOnCar(carTransform, 3f);
+            if(other!=null){
+                other.AddRewardOnCar(carTransform, -1f);
+            }
         }
-        else
-        {   
-            GameObject go = GameObject.Find(carTransform.name);
-            KartClassicAgent other = (KartClassicAgent)go.GetComponentInParent(typeof(KartClassicAgent));
-            other.AddRewardOnCar(carTransform, -9f);
-        }
+
     }
 
     public void ResetCheckpoint(Transform carTransform)
@@ -61,11 +70,34 @@ public class TrackCheckpoints : MonoBehaviour
         nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)] = 0;
     }
 
-
     public Vector3 GetNextCheckpoint(Transform carTransform)
     {
         int nextCheckpointSingleIndex = nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)];
         return checkpointSingleList[nextCheckpointSingleIndex].GetVectorTransform();
     }
+
+    public int getLastCheckpoint(){
+
+        int index = checkpointSingleList.Count - 1;
+        Debug.Log("indice dell'ultimo checkpoint" + index);
+
+        return index;
+    }
+
+    public bool CarThroughLastCheckpoint(CheckpointSingle checkpointSingle)
+    {
+
+        if (checkpointSingleList.IndexOf(checkpointSingle) == getLastCheckpoint())
+        {
+           Debug.Log("sei arrivato alla fine");
+           lastCheckpoint = true;
+
+        }
+        else {
+            lastCheckpoint = false;
+        }
+        return lastCheckpoint;
+    }
+
 }
 

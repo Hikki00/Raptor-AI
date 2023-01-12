@@ -8,7 +8,7 @@ public class CheckpointSingle : MonoBehaviour
     private Vector3 vectorTransform;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Agent")
         {
             trackCheckpoints.CarThroughCheckpoint(this, other.transform);
         }

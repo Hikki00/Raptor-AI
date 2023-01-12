@@ -5,6 +5,8 @@
 /// </summary>
 public class LapObject : TargetObject
 {
+   // private TrackCheckpoints trackCheckpoints;
+
     [Header("LapObject")]
     [Tooltip("Is this the first/last lap object?")]
     public bool finishLap;
@@ -23,9 +25,13 @@ public class LapObject : TargetObject
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!((layerMask.value & 1 << other.gameObject.layer) > 0 && other.CompareTag("Player")))
+        if (other.tag == "Player"){
+            Debug.Log("entrato");
             return;
+        }
        
         Objective.OnUnregisterPickup?.Invoke(this);
     }
+   
 }
+

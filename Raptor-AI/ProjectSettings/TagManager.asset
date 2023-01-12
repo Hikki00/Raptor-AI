@@ -8,6 +8,7 @@ TagManager:
   - Wheel
   - Wall
   - Checkpoint
+  - Agent
   layers:
   - Default
   - TransparentFX
