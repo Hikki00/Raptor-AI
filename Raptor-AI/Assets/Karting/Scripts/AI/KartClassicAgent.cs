@@ -73,7 +73,6 @@ public class KartClassicAgent : Agent
         if (other.tag == "Wall")
         {
             Debug.Log("Ho preso il muro");
-
             AddReward(-0.3f);
         }
     }
@@ -81,6 +80,23 @@ public class KartClassicAgent : Agent
     private void OnTriggerStay(Collider other){
         if (other.tag == "Wall"){
             Debug.Log("Sto nel muro");
+            AddReward(-0.005f);
+        }
+            
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.name == "Sphere")
+        {
+            Debug.Log("Ho preso la sfera");
+            AddReward(-0.3f);
+        }
+    }
+
+    private void OnCollisionStay(Collision other){
+        if (other.gameObject.name == "Sphere"){
+            Debug.Log("Sto nella sfera");
             AddReward(-0.005f);
         }
             
