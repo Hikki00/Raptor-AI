@@ -1794,15 +1794,6 @@ BoxCollider:
     type: 3}
   m_PrefabInstance: {fileID: 726370766}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-=======
---- !u!1 &190808054 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4701331743469452722, guid: df4ee229a6e980542b89cc38af53a910,
-    type: 3}
-  m_PrefabInstance: {fileID: 7279213912907523426}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!1001 &191095014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5026,11 +5017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476596651}
   m_LocalRotation: {x: 0.13449772, y: 0.000000017050043, z: -0.0000000023142193, w: 0.9909139}
-<<<<<<< Updated upstream
   m_LocalPosition: {x: 136.94, y: 3.49, z: 3.8400002}
-=======
-  m_LocalPosition: {x: 0, y: 3, z: -6}
->>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6486,15 +6473,6 @@ BoxCollider:
     type: 3}
   m_PrefabInstance: {fileID: 726370766}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-=======
---- !u!1 &655668097 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4701331743801110983, guid: df4ee229a6e980542b89cc38af53a910,
-    type: 3}
-  m_PrefabInstance: {fileID: 7279213912907523426}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!65 &669181231 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 3372703139301971191, guid: 331ae6cab0476fa45a1493448adfb9c7,
@@ -9765,15 +9743,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
-<<<<<<< Updated upstream
-=======
---- !u!4 &871215623 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4701331742067534421, guid: df4ee229a6e980542b89cc38af53a910,
-    type: 3}
-  m_PrefabInstance: {fileID: 7279213912907523426}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!1001 &873975758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11303,15 +11272,6 @@ BoxCollider:
     type: 3}
   m_PrefabInstance: {fileID: 726370766}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-=======
---- !u!4 &1145567463 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4701331742542259744, guid: df4ee229a6e980542b89cc38af53a910,
-    type: 3}
-  m_PrefabInstance: {fileID: 7279213912907523426}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!1001 &1153470531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12960,11 +12920,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
   m_RootOrder: 10
-=======
-  m_RootOrder: 9
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1282914409 stripped
 BoxCollider:
@@ -13718,26 +13674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carTransformList:
-<<<<<<< Updated upstream
   - {fileID: 0}
-=======
-  - {fileID: 693381194}
-  - {fileID: 1145567463}
-  - {fileID: 871215623}
-  - {fileID: 1300403654}
-  - {fileID: 1620219322}
-  - {fileID: 1383581055}
-  - {fileID: 1211450869}
-  - {fileID: 1785309537}
-  - {fileID: 1511074233}
-  - {fileID: 969995252}
-  - {fileID: 687964144}
-  - {fileID: 680729467}
-  - {fileID: 886763282}
-  - {fileID: 50493542}
-  - {fileID: 121690729}
-  - {fileID: 1622122311}
->>>>>>> Stashed changes
   carTransformNames: []
 --- !u!1001 &1329835359
 PrefabInstance:
@@ -14422,29 +14359,17 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< Updated upstream
       value: 136.94
-=======
-      value: 0
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.y
-<<<<<<< Updated upstream
       value: 3.49
-=======
-      value: 3
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< Updated upstream
       value: 3.8400002
-=======
-      value: -6
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -20928,7 +20853,6 @@ BoxCollider:
     type: 3}
   m_PrefabInstance: {fileID: 726370766}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
 --- !u!43 &1829120887
 Mesh:
   m_ObjectHideFlags: 0
@@ -21094,21 +21018,6 @@ Mesh:
     size: 0
     path: 
 --- !u!1 &1841181800
-=======
---- !u!1 &1785309536 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4701331742952614680, guid: df4ee229a6e980542b89cc38af53a910,
-    type: 3}
-  m_PrefabInstance: {fileID: 7279213912907523426}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1785309537 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4701331743058768010, guid: df4ee229a6e980542b89cc38af53a910,
-    type: 3}
-  m_PrefabInstance: {fileID: 7279213912907523426}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1785463369
->>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21139,11 +21048,7 @@ Transform:
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
-<<<<<<< Updated upstream
   m_Father: {fileID: 1116786483}
-=======
-  m_Father: {fileID: 0}
->>>>>>> Stashed changes
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1841181802
