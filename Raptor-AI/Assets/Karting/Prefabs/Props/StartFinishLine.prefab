@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6810259069450824363}
   - component: {fileID: 6810259069449726059}
   - component: {fileID: 2118316141038412469}
+  - component: {fileID: 7212368708246548074}
   m_Layer: 11
   m_Name: StartFinishLine
   m_TagString: Untagged
@@ -97,3 +98,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 13.615175, y: 7.117058, z: 1.666665}
   m_Center: {x: 0.015336752, y: 2.9551682, z: -0.0000024437904}
+--- !u!114 &7212368708246548074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6810259069447468715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e0422a0117bdd4daec989e39cb4c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carTransformLista: []
+  laps: 0
