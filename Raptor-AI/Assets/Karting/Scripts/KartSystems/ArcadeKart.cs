@@ -288,7 +288,7 @@ namespace KartGame.KartSystems
             m_DriftSparkInstances.Add((wheel, horizontalOffset, -rotation, spark));
         }
 
-
+        //applica l'input alla macchina, sia nel caso di training/inferenza sia nel caso di input da parte dell'utente
         void FixedUpdate()
         {
 
@@ -379,10 +379,11 @@ namespace KartGame.KartSystems
 
         void GatherInputsMLAgent(InputData m_InputsMLAgent)
         {
-            // reset input
+
             Input = new InputData();
             WantsToDrift = false;
 
+            //preleva input processato nello script di training
             Input = m_InputsMLAgent;
             WantsToDrift = Input.Brake && Vector3.Dot(Rigidbody.velocity, transform.forward) > 0.0f;
         }

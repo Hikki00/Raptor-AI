@@ -6,7 +6,7 @@ public class DropdownHandlerEnemies : MonoBehaviour
 {
     public TMPro.TMP_Dropdown dropdownRef;
 
-    // Start is called before the first frame update
+    //assegna l'evento per modificare il numero di nemici in base alla scelta
     void Start()
     {
         LevelSelector.enemyNumber = 1;

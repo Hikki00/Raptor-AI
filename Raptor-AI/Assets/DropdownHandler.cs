@@ -8,7 +8,10 @@ public class DropdownHandler : MonoBehaviour
 
     public TMPro.TMP_Dropdown dropdownRef;
 
-    // Start is called before the first frame update
+    // assegna l'evento per modificare la difficoltà in base alla scelta
+    // 1 = easy 
+    // 2 = hard
+    // 3 = raptor
     void Start()
     {
         LevelSelector.difficultyChosen = 1;

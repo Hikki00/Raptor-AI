@@ -18,6 +18,7 @@ public class StartObject : MonoBehaviour
         }
     }
 
+    //tiene traccia di quanti giri ha fatto ogni macchina, controllando eventuali casi di vittoria/sconfitta
     private void OnTriggerEnter(Collider other)
     {
 

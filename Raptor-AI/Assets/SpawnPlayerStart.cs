@@ -7,21 +7,22 @@ public class SpawnPlayerStart : MonoBehaviour
     [SerializeField] List<Transform> spawnLists;
     [SerializeField] List<GameObject> carsList;
 
-    // Start is called before the first frame update
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
     }
 
+    //chiamato al momento del caricamento della scena
+    //consente di cominciare la gara nel tracciato e con nemici/difficoltà scelti
     void Awake()
     {
-        //prendi punto di spawn nel tracciato scelto
+        //prende vettore dello spawn scelto
         Transform spawnTrans = null;
         switch (LevelSelector.spawnChosen)
         {

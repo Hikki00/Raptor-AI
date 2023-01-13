@@ -15,6 +15,7 @@ public class TrackCheckpoints : MonoBehaviour
 
     private bool lastCheckpoint = false;
 
+    //inizializza il conteggio di checkpoints per ogni macchina in gioco
     private void Awake()
     {
         Transform checkpointsTransform = transform.Find("AgentCheckpoints");
@@ -33,23 +34,28 @@ public class TrackCheckpoints : MonoBehaviour
 
         nextCheckpointSingleIndexList = new List<int>();
         foreach (Transform carTransform in carTransformList)
-        { 
+        {
             nextCheckpointSingleIndexList.Add(0);
         }
     }
 
+    // controlla che il checkpoint attraversato dalla macchina sia quello giusto (devono essere attraversati in sequenza da 0 a n-1)
+    // questo metodo viene utilizzato in particolare nel training, in modo da poter assegnare reward adeguati all'agente
+    // checkpoint corretto = +1 
+    // checkpoint non corretto = -1
     public void CarThroughCheckpoint(CheckpointSingle checkpointSingle, Transform carTransform)
     {
 
         int nextCheckpointSingleIndex = nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)];
-        
+
         if (checkpointSingleList.IndexOf(checkpointSingle) == nextCheckpointSingleIndex)
         {
             nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)] = (nextCheckpointSingleIndex + 1) % checkpointSingleList.Count;
-            
+
             GameObject go = GameObject.Find(carTransform.name);
             KartClassicAgent other = (KartClassicAgent)go.GetComponentInParent(typeof(KartClassicAgent));
-            if(other!=null){
+            if (other != null)
+            {
                 other.AddRewardOnCar(carTransform, 1f);
             }
         }
@@ -58,7 +64,8 @@ public class TrackCheckpoints : MonoBehaviour
 
             GameObject go = GameObject.Find(carTransform.name);
             KartClassicAgent other = (KartClassicAgent)go.GetComponentInParent(typeof(KartClassicAgent));
-            if(other!=null){
+            if (other != null)
+            {
                 other.AddRewardOnCar(carTransform, -1f);
             }
         }
@@ -76,10 +83,10 @@ public class TrackCheckpoints : MonoBehaviour
         return checkpointSingleList[nextCheckpointSingleIndex].GetVectorTransform();
     }
 
-    public int getLastCheckpoint(){
+    public int getLastCheckpoint()
+    {
 
         int index = checkpointSingleList.Count - 1;
-        Debug.Log("indice dell'ultimo checkpoint" + index);
 
         return index;
     }
@@ -89,11 +96,12 @@ public class TrackCheckpoints : MonoBehaviour
 
         if (checkpointSingleList.IndexOf(checkpointSingle) == getLastCheckpoint())
         {
-           Debug.Log("sei arrivato alla fine");
-           lastCheckpoint = true;
+
+            lastCheckpoint = true;
 
         }
-        else {
+        else
+        {
             lastCheckpoint = false;
         }
         return lastCheckpoint;

@@ -8,7 +8,6 @@ public class WallSingle : MonoBehaviour
     {
         if (other.tag == "Wheel" || other.tag == "Player")
         {
-            //Debug.Log("muro");
         }
     }
 

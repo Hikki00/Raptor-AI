@@ -6,6 +6,7 @@ using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 using KartGame.KartSystems;
 
+//script che gestisce il training dell'agente, gestendone le osservazioni ed i reward assegnati
 public class KartClassicAgent : Agent
 {
     private ArcadeKart arcade;
@@ -24,7 +25,7 @@ public class KartClassicAgent : Agent
     private Vector3 spawnCarFor;
 
 
-    // Start is called before the first frame update
+
     void Start()
     {
         other = (ArcadeKart)carObject.GetComponent(typeof(ArcadeKart));
@@ -33,8 +34,9 @@ public class KartClassicAgent : Agent
 
     }
 
-    void update(){
-        
+    void update()
+    {
+
     }
 
     void Awake()
@@ -42,9 +44,10 @@ public class KartClassicAgent : Agent
         arcade = GetComponent<ArcadeKart>();
     }
 
+    //inizializzazione della macchina, effettuata all'inizio di ogni episodio
+    //(gli episodi ricominciano quando il numero di step disponibili raggiunge il limite impostato nell'editor di Unity)
     public override void OnEpisodeBegin()
     {
-        //init
         transform.position = spawnCarPos;
         transform.forward = spawnCarFor;
 
@@ -57,62 +60,10 @@ public class KartClassicAgent : Agent
         m_Steering = 0f;
     }
 
-    public void AddRewardOnCar(Transform carTransform, float quantity)
-    {
-
-        if (carTransform == capsule)
-        {
-            AddReward(quantity);
-        }
-
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Wall")
-        {
-            //Debug.Log("Ho preso il muro");
-
-            AddReward(-0.3f);
-        }
-    }
-
-    private void OnTriggerStay(Collider other){
-        if (other.tag == "Wall"){
-            //Debug.Log("Sto nel muro");
-            AddReward(-0.005f);
-        }
-            
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.name == "Sphere")
-        {
-            Debug.Log("Ho preso la sfera");
-            AddReward(-0.3f);
-        }
-    }
-
-    private void OnCollisionStay(Collision other){
-        if (other.gameObject.name == "Sphere"){
-            Debug.Log("Sto nella sfera");
-            AddReward(-0.005f);
-        }
-            
-    }
-
-
-
-    void InterpretDiscreteActions(ActionBuffers actions)
-    {
-        //controllare con un debug
-        m_Steering = actions.DiscreteActions[0] - 1f;
-        m_Acceleration = actions.DiscreteActions[1] >= 1.0f;
-        m_Brake = actions.DiscreteActions[1] < 1.0f;
-    }
-
+    //consente l'interpretazione dell'input (di valore discreto) che l'agente vuole dare alla macchina, 
+    //passandolo allo script di movimento
+    // primo vettore => sinistra/dritto/destra
+    // secondo vettore => accelera/frena
     public override void OnActionReceived(ActionBuffers actions)
     {
         base.OnActionReceived(actions);
@@ -121,6 +72,13 @@ public class KartClassicAgent : Agent
         other.FixedUpdateForML(this.GenerateInput());
     }
 
+    void InterpretDiscreteActions(ActionBuffers actions)
+    {
+        //controllare con un debug
+        m_Steering = actions.DiscreteActions[0] - 1f;
+        m_Acceleration = actions.DiscreteActions[1] >= 1.0f;
+        m_Brake = actions.DiscreteActions[1] < 1.0f;
+    }
 
     public InputData GenerateInput()
     {
@@ -132,6 +90,21 @@ public class KartClassicAgent : Agent
         };
     }
 
+
+    //assegna il valore adeguato all'azione scelta dall'agente
+    public void AddRewardOnCar(Transform carTransform, float quantity)
+    {
+
+        if (carTransform == capsule)
+        {
+            AddReward(quantity);
+        }
+
+
+    }
+
+    //effettua la raccolta delle osservazioni che l'agente ha sull'ambiente
+    //in questo caso vediamo quanto correttamente la macchina è rivolta verso il prossimo checkpoint
     public override void CollectObservations(VectorSensor sensor)
     {
         Vector3 checkpointForward = trackCheckpoints.GetNextCheckpoint(capsule);
@@ -139,4 +112,41 @@ public class KartClassicAgent : Agent
         sensor.AddObservation(directionDot);
     }
 
+
+    //controllo delle collisioni su una qualsiasi parte del muro che delinea il tracciato
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Wall")
+        {
+
+            AddReward(-0.3f);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Wall")
+        {
+            AddReward(-0.005f);
+        }
+
+    }
+
+    //controllo delle collisioni sulla sfera (ostacolo del tracciato 4)
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.name == "Sphere")
+        {
+            AddReward(-0.3f);
+        }
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.name == "Sphere")
+        {
+            AddReward(-0.005f);
+        }
+
+    }
 }

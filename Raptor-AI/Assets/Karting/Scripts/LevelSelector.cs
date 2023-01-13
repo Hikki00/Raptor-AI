@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelSelector : MonoBehaviour
 {
+    // variabili globali
     public static int spawnChosen;
     public static int difficultyChosen;
     public static int enemyNumber;
@@ -12,12 +13,13 @@ public class LevelSelector : MonoBehaviour
     [SerializeField] string scene;
     [SerializeField] int level;
 
-    // Start is called before the first frame update
+
     void Start()
     {
 
     }
 
+    //permette di passare alla scena principale (gara)
     public void OpenScene()
     {
         spawnChosen = level;
