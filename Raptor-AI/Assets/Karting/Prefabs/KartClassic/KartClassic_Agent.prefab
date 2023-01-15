@@ -364,6 +364,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 100064, guid: 078f73b46517318428ecaf8e7207124c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 100066, guid: 078f73b46517318428ecaf8e7207124c, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -826,6 +830,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 335920256106703634, guid: cba6236a3ca88a54081cc989c4f0c08a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4895846114572768291, guid: cba6236a3ca88a54081cc989c4f0c08a,
         type: 3}
       propertyPath: m_Enabled
@@ -1102,6 +1111,11 @@ PrefabInstance:
       objectReference: {fileID: 775647713873647032}
     - target: {fileID: 4895846115356922113, guid: cba6236a3ca88a54081cc989c4f0c08a,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4895846115356922113, guid: cba6236a3ca88a54081cc989c4f0c08a,
+        type: 3}
       propertyPath: m_TagString
       value: Agent
       objectReference: {fileID: 0}
@@ -1224,8 +1238,8 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: a821ba2e09773564895da66b3776aeed, type: 3}
-  m_InferenceDevice: 3
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
   m_BehaviorType: 2
   m_BehaviorName: MoveToGoal
   TeamId: 0

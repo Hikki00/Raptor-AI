@@ -41,8 +41,8 @@ public class TrackCheckpoints : MonoBehaviour
 
     // controlla che il checkpoint attraversato dalla macchina sia quello giusto (devono essere attraversati in sequenza da 0 a n-1)
     // questo metodo viene utilizzato in particolare nel training, in modo da poter assegnare reward adeguati all'agente
-    // checkpoint corretto = +1 
-    // checkpoint non corretto = -1
+    // checkpoint corretto = +3
+    // checkpoint non corretto = -9
     public void CarThroughCheckpoint(CheckpointSingle checkpointSingle, Transform carTransform)
     {
 
@@ -50,13 +50,19 @@ public class TrackCheckpoints : MonoBehaviour
 
         if (checkpointSingleList.IndexOf(checkpointSingle) == nextCheckpointSingleIndex)
         {
+            if (nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)] == checkpointSingleList.Count)
+                ResetCheckpoint(carTransform);
+
             nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)] = (nextCheckpointSingleIndex + 1) % checkpointSingleList.Count;
+
+
+
 
             GameObject go = GameObject.Find(carTransform.name);
             KartClassicAgent other = (KartClassicAgent)go.GetComponentInParent(typeof(KartClassicAgent));
             if (other != null)
             {
-                other.AddRewardOnCar(carTransform, 1f);
+                other.AddRewardOnCar(carTransform, 3f);
             }
         }
         else
@@ -66,7 +72,7 @@ public class TrackCheckpoints : MonoBehaviour
             KartClassicAgent other = (KartClassicAgent)go.GetComponentInParent(typeof(KartClassicAgent));
             if (other != null)
             {
-                other.AddRewardOnCar(carTransform, -1f);
+                other.AddRewardOnCar(carTransform, -9f);
             }
         }
 

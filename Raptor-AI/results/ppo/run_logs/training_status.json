@@ -1,29 +1,47 @@
 {
-    "MoveToGoal": {
+    "MoveToGoalFinal": {
         "checkpoints": [
             {
-                "steps": 105280,
-                "file_path": "results\\ppo\\MoveToGoal\\MoveToGoal-105280.onnx",
-                "reward": 0.0,
-                "creation_time": 1673302279.5192523,
+                "steps": 499996,
+                "file_path": "results\\ppo\\MoveToGoalFinal\\MoveToGoalFinal-499996.onnx",
+                "reward": -7.438749454449862,
+                "creation_time": 1673812295.8382604,
                 "auxillary_file_paths": [
-                    "results\\ppo\\MoveToGoal\\MoveToGoal-105280.pt"
+                    "results\\ppo\\MoveToGoalFinal\\MoveToGoalFinal-499996.pt"
+                ]
+            },
+            {
+                "steps": 999996,
+                "file_path": "results\\ppo\\MoveToGoalFinal\\MoveToGoalFinal-999996.onnx",
+                "reward": -0.543749988079071,
+                "creation_time": 1673813076.1183493,
+                "auxillary_file_paths": [
+                    "results\\ppo\\MoveToGoalFinal\\MoveToGoalFinal-999996.pt"
+                ]
+            },
+            {
+                "steps": 1382680,
+                "file_path": "results\\ppo\\MoveToGoalFinal\\MoveToGoalFinal-1382680.onnx",
+                "reward": null,
+                "creation_time": 1673813766.64303,
+                "auxillary_file_paths": [
+                    "results\\ppo\\MoveToGoalFinal\\MoveToGoalFinal-1382680.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 105280,
-            "file_path": "results\\ppo\\MoveToGoal.onnx",
-            "reward": 0.0,
-            "creation_time": 1673302279.5192523,
+            "steps": 1382680,
+            "file_path": "results\\ppo\\MoveToGoalFinal.onnx",
+            "reward": null,
+            "creation_time": 1673813766.64303,
             "auxillary_file_paths": [
-                "results\\ppo\\MoveToGoal\\MoveToGoal-105280.pt"
+                "results\\ppo\\MoveToGoalFinal\\MoveToGoalFinal-1382680.pt"
             ]
         }
     },
     "metadata": {
         "stats_format_version": "0.3.0",
         "mlagents_version": "0.29.0",
-        "torch_version": "1.7.0+cpu"
+        "torch_version": "1.7.0+cu110"
     }
 }

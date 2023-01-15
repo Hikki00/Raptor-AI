@@ -48,30 +48,65 @@ public class SpawnPlayerStart : MonoBehaviour
         carsList[0].transform.forward = spawnTrans.forward;
 
 
+
+
+
         int valueCalculatedFor = 1 + (5 * (LevelSelector.difficultyChosen - 1));
         Vector3 tempVec = spawnTrans.position;
         bool pari = true;
-        //spawna macchine con difficoltà scelta (1-5 easy, 6-10 hard, 11-16 raptor)
-        for (int i = valueCalculatedFor; i < LevelSelector.enemyNumber + valueCalculatedFor; i++)
+
+
+        if (LevelSelector.spawnChosen == 4)
         {
-
-            carsList[i].SetActive(true);
-            if (pari)
+            for (int i = 16; i < 16 + LevelSelector.enemyNumber; i++)
             {
-                tempVec.x += 5;
-                pari = false;
-            }
-            else
-            {
-                tempVec.x -= 5;
-                tempVec.z -= 4;
-                pari = true;
-            }
-            carsList[i].transform.position = tempVec;
-            carsList[i].transform.forward = spawnTrans.forward;
+
+                carsList[i].SetActive(true);
+                if (pari)
+                {
+                    tempVec.x += 5;
+                    pari = false;
+                }
+                else
+                {
+                    tempVec.x -= 5;
+                    tempVec.z -= 4;
+                    pari = true;
+                }
+                carsList[i].transform.position = tempVec;
+                carsList[i].transform.forward = spawnTrans.forward;
 
 
+            }
         }
+        else
+        {
+            //spawna macchine con difficoltà scelta (1-5 easy, 6-10 hard, 11-16 raptor)
+            for (int i = valueCalculatedFor; i < LevelSelector.enemyNumber + valueCalculatedFor; i++)
+            {
+
+                carsList[i].SetActive(true);
+                if (pari)
+                {
+                    tempVec.x += 5;
+                    pari = false;
+                }
+                else
+                {
+                    tempVec.x -= 5;
+                    tempVec.z -= 4;
+                    pari = true;
+                }
+                carsList[i].transform.position = tempVec;
+                carsList[i].transform.forward = spawnTrans.forward;
+
+
+            }
+        }
+
+
+
+
 
 
 
