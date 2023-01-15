@@ -14,7 +14,7 @@ public class StartObject : MonoBehaviour
         nextLap = new List<int>();
         foreach (GameObject carTransform in carTransformLista)
         {
-            nextLap.Add(0);
+            nextLap.Add(1);
         }
     }
 
@@ -22,7 +22,7 @@ public class StartObject : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag != "Wheel")
+        if (other.tag != "Wheel" && CheckpointLast.isPass)
         {
             int kartIndex = carTransformLista.IndexOf(other.gameObject);
 

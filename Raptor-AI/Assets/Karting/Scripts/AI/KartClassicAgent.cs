@@ -31,7 +31,6 @@ public class KartClassicAgent : Agent
         other = (ArcadeKart)carObject.GetComponent(typeof(ArcadeKart));
         spawnCarPos = carObject.transform.position;
         spawnCarFor = carObject.transform.forward;
-
     }
 
     void update()

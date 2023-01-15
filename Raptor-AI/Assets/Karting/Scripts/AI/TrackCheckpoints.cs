@@ -13,8 +13,6 @@ public class TrackCheckpoints : MonoBehaviour
 
     private KartClassicAgent kartClassicAgent;
 
-    private bool lastCheckpoint = false;
-
     //inizializza il conteggio di checkpoints per ogni macchina in gioco
     private void Awake()
     {
@@ -29,8 +27,6 @@ public class TrackCheckpoints : MonoBehaviour
             checkpointSingle.SetVectorTranform(checkpointSingleTransform.transform.forward);
             checkpointSingleList.Add(checkpointSingle);
         }
-
-        getLastCheckpoint();
 
         nextCheckpointSingleIndexList = new List<int>();
         foreach (Transform carTransform in carTransformList)
@@ -87,30 +83,6 @@ public class TrackCheckpoints : MonoBehaviour
     {
         int nextCheckpointSingleIndex = nextCheckpointSingleIndexList[carTransformList.IndexOf(carTransform)];
         return checkpointSingleList[nextCheckpointSingleIndex].GetVectorTransform();
-    }
-
-    public int getLastCheckpoint()
-    {
-
-        int index = checkpointSingleList.Count - 1;
-
-        return index;
-    }
-
-    public bool CarThroughLastCheckpoint(CheckpointSingle checkpointSingle)
-    {
-
-        if (checkpointSingleList.IndexOf(checkpointSingle) == getLastCheckpoint())
-        {
-
-            lastCheckpoint = true;
-
-        }
-        else
-        {
-            lastCheckpoint = false;
-        }
-        return lastCheckpoint;
     }
 
 }
