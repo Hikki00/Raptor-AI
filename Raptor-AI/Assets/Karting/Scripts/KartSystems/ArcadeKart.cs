@@ -251,6 +251,17 @@ namespace KartGame.KartSystems
 
             m_CurrentGrip = baseStats.Grip;
 
+            if (LevelSelector.difficultyChosen == 1 || LevelSelector.difficultyChosen == 2)
+            {
+                baseStats.TopSpeed = 14f;
+                baseStats.Acceleration = 7f;
+            }
+            else
+            {
+                baseStats.TopSpeed = 12f;
+                baseStats.Acceleration = 5f;
+            }
+
             if (DriftSparkVFX != null)
             {
                 AddSparkToWheel(RearLeftWheel, -DriftSparkHorizontalOffset, -DriftSparkRotation);
@@ -650,6 +661,12 @@ namespace KartGame.KartSystems
             ActivateDriftVFX(IsDrifting && GroundPercent > 0.0f);
         }
 
+
+        public void setParameters(float uno, float due)
+        {
+            m_FinalStats.TopSpeed = uno;
+            m_FinalStats.Acceleration = due;
+        }
     }
 
 }
