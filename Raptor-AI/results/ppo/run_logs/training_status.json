@@ -1,41 +1,59 @@
 {
-    "MoveToGoalEasyFinal": {
+    "LastNNEasy": {
         "checkpoints": [
             {
-                "steps": 281400,
-                "file_path": "results\\ppo\\MoveToGoalEasyFinal\\MoveToGoalEasyFinal-281400.onnx",
-                "reward": null,
-                "creation_time": 1673821415.5564454,
+                "steps": 1499968,
+                "file_path": "results\\ppo\\LastNNEasy\\LastNNEasy-1499968.onnx",
+                "reward": 15.0,
+                "creation_time": 1673862537.9045672,
                 "auxillary_file_paths": [
-                    "results\\ppo\\MoveToGoalEasyFinal\\MoveToGoalEasyFinal-281400.pt"
+                    "results\\ppo\\LastNNEasy\\LastNNEasy-1499968.pt"
                 ]
             },
             {
-                "steps": 281400,
-                "file_path": "results\\ppo\\MoveToGoalEasyFinal\\MoveToGoalEasyFinal-281400.onnx",
+                "steps": 1999960,
+                "file_path": "results\\ppo\\LastNNEasy\\LastNNEasy-1999960.onnx",
                 "reward": null,
-                "creation_time": 1673821466.9362998,
+                "creation_time": 1673863261.8943048,
                 "auxillary_file_paths": [
-                    "results\\ppo\\MoveToGoalEasyFinal\\MoveToGoalEasyFinal-281400.pt"
+                    "results\\ppo\\LastNNEasy\\LastNNEasy-1999960.pt"
                 ]
             },
             {
-                "steps": 322740,
-                "file_path": "results\\ppo\\MoveToGoalEasyFinal\\MoveToGoalEasyFinal-322740.onnx",
+                "steps": 2001240,
+                "file_path": "results\\ppo\\LastNNEasy\\LastNNEasy-2001240.onnx",
                 "reward": null,
-                "creation_time": 1673821552.5959601,
+                "creation_time": 1673863263.5023506,
                 "auxillary_file_paths": [
-                    "results\\ppo\\MoveToGoalEasyFinal\\MoveToGoalEasyFinal-322740.pt"
+                    "results\\ppo\\LastNNEasy\\LastNNEasy-2001240.pt"
+                ]
+            },
+            {
+                "steps": 2499992,
+                "file_path": "results\\ppo\\LastNNEasy\\LastNNEasy-2499992.onnx",
+                "reward": null,
+                "creation_time": 1673864812.5188768,
+                "auxillary_file_paths": [
+                    "results\\ppo\\LastNNEasy\\LastNNEasy-2499992.pt"
+                ]
+            },
+            {
+                "steps": 2516280,
+                "file_path": "results\\ppo\\LastNNEasy\\LastNNEasy-2516280.onnx",
+                "reward": null,
+                "creation_time": 1673864835.873162,
+                "auxillary_file_paths": [
+                    "results\\ppo\\LastNNEasy\\LastNNEasy-2516280.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 322740,
-            "file_path": "results\\ppo\\MoveToGoalEasyFinal.onnx",
+            "steps": 2516280,
+            "file_path": "results\\ppo\\LastNNEasy.onnx",
             "reward": null,
-            "creation_time": 1673821552.5959601,
+            "creation_time": 1673864835.873162,
             "auxillary_file_paths": [
-                "results\\ppo\\MoveToGoalEasyFinal\\MoveToGoalEasyFinal-322740.pt"
+                "results\\ppo\\LastNNEasy\\LastNNEasy-2516280.pt"
             ]
         }
     },
