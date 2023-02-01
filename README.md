@@ -15,9 +15,9 @@ Hanno contribuito a questo progetto:
 
  
 
-* [Scermino Simone](https://github.com/CpDant)
+* [Scermino Simone](https://github.com/Hikki00)
 * [D'Antuono Francesco Paolo](https://github.com/CpDant)
-* [Miron Roberto Andrei](https://github.com/CpDant)
+* [Miron Roberto Andrei](https://github.com/RobertoAM1)
 * [Vitale Ciro](https://github.com/cirovitale)
 * [Consiglio Luigi](https://github.com/luicons01)
 
@@ -33,7 +33,7 @@ L'obiettivo del progetto è quello di creare agenti intelligenti capaci di gareg
  
 
 ## Risorse presenti nel repository
-Directory project-documentation -> materiale riguardante la presentazione del suddetto progetto (documento della progettazione e slides)
+Directory project-documentation -> documentazione progetto.
 Directory Raptor-AI -> materiale utile per caricare il progetto in Unity Hub.
 
  
