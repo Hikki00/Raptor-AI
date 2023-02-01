@@ -1,65 +1,38 @@
 {
-    "LastNNEasy": {
+    "OvalNNFinal": {
         "checkpoints": [
             {
-                "steps": 1499968,
-                "file_path": "results\\ppo\\LastNNEasy\\LastNNEasy-1499968.onnx",
-                "reward": 15.0,
-                "creation_time": 1673862537.9045672,
+                "steps": 499992,
+                "file_path": "results\\ppo\\OvalNNFinal\\OvalNNFinal-499992.onnx",
+                "reward": 25.2,
+                "creation_time": 1673873363.5972652,
                 "auxillary_file_paths": [
-                    "results\\ppo\\LastNNEasy\\LastNNEasy-1499968.pt"
+                    "results\\ppo\\OvalNNFinal\\OvalNNFinal-499992.pt"
                 ]
             },
             {
-                "steps": 1999960,
-                "file_path": "results\\ppo\\LastNNEasy\\LastNNEasy-1999960.onnx",
+                "steps": 501720,
+                "file_path": "results\\ppo\\OvalNNFinal\\OvalNNFinal-501720.onnx",
                 "reward": null,
-                "creation_time": 1673863261.8943048,
+                "creation_time": 1673873369.247546,
                 "auxillary_file_paths": [
-                    "results\\ppo\\LastNNEasy\\LastNNEasy-1999960.pt"
-                ]
-            },
-            {
-                "steps": 2001240,
-                "file_path": "results\\ppo\\LastNNEasy\\LastNNEasy-2001240.onnx",
-                "reward": null,
-                "creation_time": 1673863263.5023506,
-                "auxillary_file_paths": [
-                    "results\\ppo\\LastNNEasy\\LastNNEasy-2001240.pt"
-                ]
-            },
-            {
-                "steps": 2499992,
-                "file_path": "results\\ppo\\LastNNEasy\\LastNNEasy-2499992.onnx",
-                "reward": null,
-                "creation_time": 1673864812.5188768,
-                "auxillary_file_paths": [
-                    "results\\ppo\\LastNNEasy\\LastNNEasy-2499992.pt"
-                ]
-            },
-            {
-                "steps": 2516280,
-                "file_path": "results\\ppo\\LastNNEasy\\LastNNEasy-2516280.onnx",
-                "reward": null,
-                "creation_time": 1673864835.873162,
-                "auxillary_file_paths": [
-                    "results\\ppo\\LastNNEasy\\LastNNEasy-2516280.pt"
+                    "results\\ppo\\OvalNNFinal\\OvalNNFinal-501720.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 2516280,
-            "file_path": "results\\ppo\\LastNNEasy.onnx",
+            "steps": 501720,
+            "file_path": "results\\ppo\\OvalNNFinal.onnx",
             "reward": null,
-            "creation_time": 1673864835.873162,
+            "creation_time": 1673873369.247546,
             "auxillary_file_paths": [
-                "results\\ppo\\LastNNEasy\\LastNNEasy-2516280.pt"
+                "results\\ppo\\OvalNNFinal\\OvalNNFinal-501720.pt"
             ]
         }
     },
     "metadata": {
         "stats_format_version": "0.3.0",
         "mlagents_version": "0.29.0",
-        "torch_version": "1.7.0+cu110"
+        "torch_version": "1.7.0+cpu"
     }
 }

@@ -78,6 +78,28 @@ public class SpawnPlayerStart : MonoBehaviour
 
 
             }
+        } else if (LevelSelector.spawnChosen == 2)
+        {
+            for (int i = 6; i < 6 + LevelSelector.enemyNumber; i++)
+            {
+
+                carsList[i].SetActive(true);
+                if (pari)
+                {
+                    tempVec.x += 5;
+                    pari = false;
+                }
+                else
+                {
+                    tempVec.x -= 5;
+                    tempVec.z -= 4;
+                    pari = true;
+                }
+                carsList[i].transform.position = tempVec;
+                carsList[i].transform.forward = spawnTrans.forward;
+
+
+            }
         }
         else
         {
